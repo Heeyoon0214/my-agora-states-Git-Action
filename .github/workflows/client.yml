@@ -21,16 +21,16 @@ jobs:
 
       - name: SHOW AWS CLI VERSION
         env:
-          AWS_ACCESS_KEY_ID: AKIASEBV4CULIR4ER4FX
-          AWS_SECRET_ACCESS_KEY: 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
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_EC2_METADATA_DISABLED: true
         run: |
           aws --version
 
       - name: Sync Bucket
         env:
-          AWS_ACCESS_KEY_ID: AKIASEBV4CULIR4ER4FX
-          AWS_SECRET_ACCESS_KEY: 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
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_EC2_METADATA_DISABLED: true
         run: |
           aws s3 sync \
